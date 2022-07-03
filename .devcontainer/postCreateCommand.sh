@@ -38,3 +38,4 @@ fi
 
 flutter precache
 flutter doctor
+flutter pub get
