@@ -12,7 +12,7 @@ sudo chown -R 1000:1000 $HOME/.config
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-echo 'plugins+=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)' >> $HOME/.zshrc
+sed -i 's/plugins=(git)/plugins=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
 sudo usermod -s /usr/bin/zsh $(whoami)
 
