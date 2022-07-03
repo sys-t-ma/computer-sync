@@ -1,0 +1,26 @@
+{
+	"name": "Computer sync",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": "zsh ./.devcontainer/postCreateCommand.sh",
+	"settings": {
+		"editor.formatOnSave": true,
+		"terminal.integrated.defaultProfile.linux": "zsh"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dart-code.flutter"
+			],
+			"dart.analysisExcludedFolders": [
+				"flutter"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"features": {
+		"docker-from-docker": "latest",
+		"git": "latest"
+	}
+}
