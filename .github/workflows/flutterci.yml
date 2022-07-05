@@ -35,30 +35,30 @@ jobs:
 
       - name: Build Tarball
         run: |
-          install -D assets/appimagepool.svg linux/packaging/usr/share/icons/hicolor/128x128/apps/appimagepool.svg
+          install -D assets/computer_sync.svg linux/packaging/usr/share/icons/hicolor/128x128/apps/computer_sync.svg
           cp -fr build/linux/x64/release/bundle linux/packaging/usr/bin
           mkdir AppDir
           cp -r linux/packaging/usr AppDir
-          ln -sr AppDir/usr/bin/appimagepool AppDir/appimagepool
-          tar czf appimagepool-${{ github.event_name == 'release' && github.event.release.tag_name || 'continuous' }}-x86_64.tar.gz -C AppDir/ .
+          ln -sr AppDir/usr/bin/computer_sync AppDir/computer_sync
+          tar czf computer_sync-${{ github.event_name == 'release' && github.event.release.tag_name || 'continuous' }}-x86_64.tar.gz -C AppDir/ .
       - name: Build AppImage
         run: |
           echo '#!/bin/sh
           cd "$(dirname "$0")"
-          exec ./appimagepool' > AppDir/AppRun
+          exec ./computer_sync' > AppDir/AppRun
           chmod +x AppDir/AppRun
-          ln -sr AppDir/usr/share/icons/hicolor/128x128/apps/appimagepool.svg AppDir/appimagepool.svg
-          cp AppDir/usr/share/applications/appimagepool.desktop AppDir/appimagepool.desktop
+          ln -sr AppDir/usr/share/icons/hicolor/128x128/apps/computer_sync.svg AppDir/computer_sync.svg
+          cp AppDir/usr/share/applications/computer_sync.desktop AppDir/computer_sync.desktop
           curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -o appimagetool-x86_64.AppImage
           chmod +x appimagetool-x86_64.AppImage
-          ARCH=x86_64 ./appimagetool-x86_64.AppImage AppDir/ appimagepool-${{ github.event_name == 'release' && github.event.release.tag_name || 'continuous' }}-x86_64.AppImage
+          ARCH=x86_64 ./appimagetool-x86_64.AppImage AppDir/ computer_sync-${{ github.event_name == 'release' && github.event.release.tag_name || 'continuous' }}-x86_64.AppImage
       - name: App tar sha256 sum
-        run: sha256sum appimagepool-*-x86_64.tar.gz
+        run: sha256sum computer_sync-*-x86_64.tar.gz
 
       - uses: svenstaro/upload-release-action@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./appimagepool-*
+          file: ./computer_sync-*
           file_glob: true
           prerelease: ${{ github.event_name != 'release' }}
           release_name: ${{ github.event_name == 'release' && github.event.release.name || 'Development Build' }}
