@@ -10,11 +10,11 @@ ms-vscode-remote.vscode-remote-extensionpack
 - Open folder in vscode
 - Click on the icon
 
-![Screenshot1](print/1.png)
+![Screenshot1](assets/screenshot/1.png)
 
 - Click on "Reopen in container"
 
-![Screenshot2](print/2.png)
+![Screenshot2](assets/screenshot/2.png)
 
 ## Run Dev
 ```bash
