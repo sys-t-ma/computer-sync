@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>computer_sync</id>
+	<name>Computer sync</name>
+	<summary></summary>
+	<metadata_license></metadata_license>
+	<project_license></project_license>
+	<recommends>
+
+	</recommends>
+
+
+	<description>
+	
+	</description>
+	<screenshots>
+		<screenshot>
+			
+		</screenshot>
+	</screenshots>
+	<launchable type="desktop-id">computer_sync.desktop</launchable>
+	<releases>
+	
+	</releases>
+	<content_rating type="oars-1.0" />
+
+</component>

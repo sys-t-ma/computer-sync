@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Computer Sync
+Icon=computer_sync
+Exec=computer_sync %u
+StartupWMClass=appimagepool
+Categories=Utility;
+Keywords=AppImage;Store;AppImageHub;Flutter;Gtk;
