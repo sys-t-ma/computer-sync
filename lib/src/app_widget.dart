@@ -1,4 +1,5 @@
 import 'package:computer_sync/src/modules/home/home_page.dart';
+import 'package:computer_sync/src/shared/core/app_colors.dart';
 import 'package:computer_sync/src/shared/core/theme/theme_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,23 +30,11 @@ class App extends StatelessWidget {
           theme: themeNotifier.isDark
               ? ThemeData.dark().copyWith(
                   useMaterial3: true,
-                  primaryColorDark: Colors.purple,
+                  primaryColorDark: AppColors.primary,
                 )
               : ThemeData.light().copyWith(
                   useMaterial3: true,
-                  colorScheme: ColorScheme(
-                    brightness: Brightness.dark,
-                    primary: Colors.green,
-                    onPrimary: Colors.purpleAccent,
-                    secondary: Colors.amber,
-                    onSecondary: Colors.brown,
-                    error: Colors.red,
-                    onError: Colors.red,
-                    background: Colors.grey,
-                    onBackground: Colors.black,
-                    surface: Colors.amberAccent,
-                    onSurface: Colors.cyanAccent,
-                  ),
+                  primaryColorLight: AppColors.primary,
                 ),
           home: const HomePage(title: 'Computer Sync'),
         );

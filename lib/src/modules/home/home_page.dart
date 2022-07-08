@@ -1,6 +1,7 @@
 import 'package:computer_sync/src/shared/core/core_export.dart';
 import 'package:computer_sync/src/shared/core/theme/theme_model.dart';
 
+import 'package:computer_sync/src/shared/widgets/button/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,16 +19,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
       return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
         body: Center(
           child: Column(
             children: [
-              const SizedBox(height: 10),
-              Image.asset(AppAssets.logo),
-              const SizedBox(height: 5),
-              const Text('Computer Sync', style: TextStyle(fontSize: 18)),
+              const SizedBox(height: 30),
+              Image.asset(
+                themeNotifier.isDark ? AppAssets.logoDark : AppAssets.logoLight,
+                width: 96,
+              ),
+              const SizedBox(height: 30),
+              const Text(
+                'Computer Sync',
+                style: AppTextStyles.titleBold,
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ButtonWidget.primary(label: 'Exportar', onTap: () {}),
+                  ButtonWidget(label: 'Importar', onTap: () {}),
+                ],
+              )
             ],
           ),
         ),
