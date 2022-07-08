@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Tarball
         run: |
-          install -D assets/computer_sync.svg linux/packaging/usr/share/icons/hicolor/128x128/apps/computer_sync.svg
+          install -D assets/img/computer_sync.svg linux/packaging/usr/share/icons/hicolor/128x128/apps/computer_sync.svg
           cp -fr build/linux/x64/release/bundle linux/packaging/usr/bin
           mkdir AppDir
           cp -r linux/packaging/usr AppDir
