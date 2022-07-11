@@ -27,8 +27,9 @@ class ButtonWidget extends StatelessWidget {
       child: SizedBox(
         width: 150,
         child: MaterialButton(
-          color:
-              isPrimary ? AppColors.primary : Color.fromARGB(255, 58, 58, 58),
+          color: isPrimary
+              ? AppColors.primary
+              : const Color.fromARGB(255, 58, 58, 58),
           textColor: AppColors.primaryText,
           onPressed: onTap,
           shape:

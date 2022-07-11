@@ -1,5 +1,4 @@
 import 'dart:io';
-import './app_constants.dart';
 import 'package:path/path.dart' as p;
 
 _copyDirectory(Directory source, Directory destination) async {
