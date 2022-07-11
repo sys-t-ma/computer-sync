@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:computer_sync/src/shared/core/core_export.dart';
 import 'package:computer_sync/src/shared/core/theme/theme_model.dart';
 
 import 'package:computer_sync/src/shared/widgets/button/button_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
