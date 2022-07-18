@@ -10,6 +10,6 @@ class AppTextStyles {
   static const TextStyle buttonLabel = TextStyle(
     fontSize: 16,
     fontFamily: 'Cantarell',
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
   );
 }
