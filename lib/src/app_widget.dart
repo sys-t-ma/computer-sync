@@ -4,19 +4,6 @@ import 'package:computer_sync/src/shared/core/theme/theme_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// class App extends StatelessWidget {
-//   const App({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Computer Sync',
-//       theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
-//       home: const HomePage(title: 'Computer Sync'),
-//     );
-//   }
-// }
-
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
@@ -30,11 +17,11 @@ class App extends StatelessWidget {
           theme: themeNotifier.isDark
               ? ThemeData.dark().copyWith(
                   useMaterial3: true,
-                  primaryColorDark: AppColors.primary,
+                  scaffoldBackgroundColor: AppColors.darkBackground,
                 )
               : ThemeData.light().copyWith(
                   useMaterial3: true,
-                  primaryColorLight: AppColors.primary,
+                  scaffoldBackgroundColor: AppColors.lightBackground,
                 ),
           home: const HomePage(title: 'Computer Sync'),
         );
