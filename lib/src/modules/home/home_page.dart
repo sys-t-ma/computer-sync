@@ -1,3 +1,4 @@
+import 'package:computer_sync/src/shared/widgets/locale_row/locale_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -5,6 +6,7 @@ import 'package:computer_sync/src/shared/core/core_export.dart';
 import 'package:computer_sync/src/shared/core/theme/theme_model.dart';
 
 import 'package:computer_sync/src/shared/widgets/button/button_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -23,6 +25,7 @@ class _HomePageState extends State<HomePage> {
         body: Center(
           child: Column(
             children: [
+              const LocaleRowWidget(),
               const SizedBox(height: 30),
               Image.asset(
                 themeNotifier.isDark ? AppAssets.logoDark : AppAssets.logoLight,
@@ -37,8 +40,14 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ButtonWidget.primary(label: 'Exportar', onTap: () {}),
-                  ButtonWidget(label: 'Importar', onTap: () {}),
+                  ButtonWidget.primary(
+                    label: AppLocalizations.of(context)!.export,
+                    onTap: () {},
+                  ),
+                  ButtonWidget(
+                    label: AppLocalizations.of(context)!.import,
+                    onTap: () {},
+                  ),
                 ],
               )
             ],
